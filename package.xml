@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<!-- SVN-ID: $Id$ -->
+<package name="de.wbbmods.wbb.findpolls">
+	<packageInformation>
+		<packageName>Find Polls in Threads</packageName>
+		<packageDescription>This Plugin adds a link to a to the poll-icon in the boardview and to the search in threadview, for searching for polls in the thread.</packageDescription>
+		<version>1.0.0</version>
+		<date>2008-07-30</date>
+		<plugin>com.woltlab.wbb</plugin>
+	</packageInformation>
+
+	<authorInformation>
+		<author>RouL</author>
+		<authorURL>http://community.woltlab.com/db/index.php?page=User&amp;userID=18184</authorURL>
+	</authorInformation>
+
+	<requiredPackages>
+		<requiredPackage minversion="1.0.8">com.woltlab.wcf</requiredPackage>
+		<requiredPackage minversion="3.0.7">com.woltlab.wbb</requiredPackage>
+	</requiredPackages>
+
+	<instructions type="install">
+		<files>files.tar</files>
+		<templatepatch>templates.diff</templatepatch>
+	</instructions>
+</package>
