@@ -65,7 +65,7 @@ class FindPollsAction extends AbstractAction {
 		}
 
 		// do search
-		$result = $this->engine->search('', array('post'), false, true, $conditions, 'time DESC');
+		$result = $this->engine->search('', array('post'), $conditions, 'time DESC');
 
 		// result is empty
 		if (count($result) == 0) {
