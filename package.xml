@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
 <!-- SVN-ID: $Id$ -->
-<package name="de.wbbmods.wbb.findpolls">
+<package name="com.woltlab.community.roul.wbb.findpolls">
 	<packageinformation>
 		<packagename>Find Polls in Threads</packagename>
 		<packagedescription>This Plugin adds a link to a to the poll-icon in the boardview and to the search in threadview, for searching for polls in the thread.</packagedescription>
