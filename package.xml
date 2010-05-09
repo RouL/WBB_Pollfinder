@@ -22,6 +22,7 @@
 
 	<instructions type="install">
 		<files>files.tar</files>
+		<eventlistener>eventlistener.xml</eventlistener>
 		<templatepatch>templates.diff</templatepatch>
 	</instructions>
 </package>
