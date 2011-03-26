@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- SVN-ID: $Id$ -->
-<config>
-	<originalTemplates>/home/roul/Development/WCF/original/templates/wbb</originalTemplates>
-	<excludes>
-		<exclude>templates.diff.bak</exclude>
-	</excludes>
-</config>

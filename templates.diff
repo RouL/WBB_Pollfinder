@@ -1,0 +1,45 @@
+--- F:/Development/PHP/workspace/WBB31/templates/boardThreads.tpl	Sat Mar 05 23:09:52 2011
++++ F:/Development/PHP/workspace/com.woltlab.community.roul.wbb.findpolls/templates_patched/boardThreads.tpl	Sat Mar 05 18:18:32 2011
+@@ -121,7 +121,7 @@
+ 									{if $additionalSmallPages.$threadID|isset}{@$additionalSmallPages.$threadID}{/if}
+ 									{if $thread->subscribed}<img src="{icon}subscribedS.png{/icon}" alt="" title="{lang}wbb.board.threads.subscribed{/lang}" />{/if}
+ 									{if $thread->ownPosts}<img src="{icon}userS.png{/icon}" alt="" title="{lang}wbb.board.threads.ownPosts{/lang}" />{/if}
+-									{if $thread->polls}<img src="{icon}pollS.png{/icon}" alt="" title="{lang}wbb.board.threads.polls{/lang}" />{/if}
++									{if $thread->polls}<a href="index.php?page=PollOverview&threadID={@$thread->threadID}{@SID_ARG_2ND}"><img src="{icon}pollS.png{/icon}" alt="" title="{lang}wbb.board.threads.polls{/lang}" /></a>{/if}
+ 									{if MODULE_ATTACHMENT && $thread->attachments}<img src="{icon}attachmentS.png{/icon}" alt="" title="{lang}wbb.board.threads.attachments{/lang}" />{/if}
+ 									{if BOARD_THREADS_ENABLE_LANGUAGE_FLAG && $thread->languageID}{@$thread->getLanguageIcon()}{/if}
+ 									{if MODULE_THREAD_MARKING_AS_DONE == 1 && $board->enableMarkingAsDone == 1}
+--- F:/Development/PHP/workspace/WBB31/templates/header.tpl	Wed Jan 27 18:05:08 2010
++++ F:/Development/PHP/workspace/com.woltlab.community.roul.wbb.findpolls/templates_patched/header.tpl	Sat Mar 05 18:18:32 2011
+@@ -147,6 +147,9 @@
+ 		{if !$searchFieldTitle|isset}{assign var='searchFieldTitle' value='{lang}wbb.header.search.query{/lang}'}{/if}
+ 		{if !$searchFieldOptions|isset}
+ 			{capture assign=searchFieldOptions}
++				{if $thread|isset && $thread->polls}
++					<li><a href="index.php?page=PollOverview&threadID={@$thread->threadID}{@SID_ARG_2ND}">{lang}wbb.search.findPolls{/lang}</a></li>
++				{/if}
+ 				<li><a href="index.php?form=Search&amp;action=unread{@SID_ARG_2ND}">{lang}wbb.search.unreadPosts{/lang}</a></li>
+ 				<li><a href="index.php?form=Search&amp;action=unreplied{@SID_ARG_2ND}">{lang}wbb.search.unrepliedThreads{/lang}</a></li>
+ 				<li><a href="index.php?form=Search&amp;action=24h{@SID_ARG_2ND}">{lang}wbb.search.threadsOfTheLast24Hours{/lang}</a></li>
+--- F:/Development/PHP/workspace/WBB31/templates/searchResultPost.tpl	Wed Aug 26 18:45:04 2009
++++ F:/Development/PHP/workspace/com.woltlab.community.roul.wbb.findpolls/templates_patched/searchResultPost.tpl	Sat Mar 05 18:18:32 2011
+@@ -57,7 +57,7 @@
+ 				<div class="statusDisplayIcons">
+ 					{if $additionalSmallPages.$threadID|isset}{@$additionalSmallPages.$threadID}{/if}
+ 					{if $thread->subscribed}<img src="{icon}subscribedS.png{/icon}" alt="" title="{lang}wbb.board.threads.subscribed{/lang}" />{/if}
+-					{if $thread->polls}<img src="{icon}pollS.png{/icon}" alt="" title="{lang}wbb.board.threads.polls{/lang}" />{/if}
++					{if $thread->polls}<a href="index.php?page=PollOverview&threadID={@$thread->threadID}{@SID_ARG_2ND}"><img src="{icon}pollS.png{/icon}" alt="" title="{lang}wbb.board.threads.polls{/lang}" /></a>{/if}
+ 					{if MODULE_ATTACHMENT && $thread->attachments}<img src="{icon}attachmentS.png{/icon}" alt="" title="{lang}wbb.board.threads.attachments{/lang}" />{/if}
+ 					{if $thread->ownPosts}<img src="{icon}userS.png{/icon}" alt="" title="{lang}wbb.board.threads.ownPosts{/lang}" />{/if}
+ 					{if BOARD_THREADS_ENABLE_LANGUAGE_FLAG && $thread->languageID}{@$thread->getLanguageIcon()}{/if}
+--- F:/Development/PHP/workspace/WBB31/templates/subscriptions.tpl	Wed Aug 26 18:45:04 2009
++++ F:/Development/PHP/workspace/com.woltlab.community.roul.wbb.findpolls/templates_patched/subscriptions.tpl	Sat Mar 05 18:18:32 2011
+@@ -222,7 +222,7 @@
+ 												<div class="statusDisplayIcons">
+ 													{if $additionalSmallPages.$threadID|isset}{@$additionalSmallPages.$threadID}{/if}
+ 													{if $thread->ownPosts}<img src="{icon}userS.png{/icon}" alt="" title="{lang}wbb.board.threads.ownPosts{/lang}" />{/if}
+-													{if $thread->polls}<img src="{icon}pollS.png{/icon}" alt="" title="{lang}wbb.board.threads.polls{/lang}" />{/if}
++													{if $thread->polls}<a href="index.php?page=PollOverview&threadID={@$thread->threadID}{@SID_ARG_2ND}"><img src="{icon}pollS.png{/icon}" alt="" title="{lang}wbb.board.threads.polls{/lang}" /></a>{/if}
+ 													{if MODULE_ATTACHMENT && $thread->attachments}<img src="{icon}attachmentS.png{/icon}" alt="" title="{lang}wbb.board.threads.attachments{/lang}" />{/if}
+ 													{if BOARD_THREADS_ENABLE_LANGUAGE_FLAG && $thread->languageID}{@$thread->getLanguageIcon()}{/if}
+ 												</div>
