@@ -11,7 +11,6 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
  * @package		com.woltlab.community.roul.wbb.findpolls
  * @subpackage	system.event.listener
  * @category	Find Polls in Threads
- * @version		$Id$
  */
 class PollOverviewPageThreadListener implements EventListener {
 	/**
